@@ -19,9 +19,9 @@ import (
 //type Fnt *gltext.Font
 
 //InitGltext will load in font files
-func InitGltext(scale int) *gltext.Font {
+func InitGltext(scale int, fontPath, configPath string) *gltext.Font {
 	// This file holds the actual glyph shapes.
-	imgFile, err := gas.Abs("github.com/LaurenceGA/Pong/src/fonts/bitmap_font.png")
+	imgFile, err := gas.Abs(fontPath)
 	if err != nil {
 		fmt.Printf("Find font image file: %v", err)
 	}
@@ -29,7 +29,7 @@ func InitGltext(scale int) *gltext.Font {
 	// This file is a JSON encoded dataset which describes the font
 	// and contains the pixel offsets and sizes for each glyph in
 	// bitmap_font.png. Both files are needed to load a bitmap font.
-	configFile, err := gas.Abs("github.com/LaurenceGA/Pong/src/fonts/bitmap-font.js")
+	configFile, err := gas.Abs(configPath)
 	if err != nil {
 		fmt.Printf("Find font config file: %v", err)
 	}
