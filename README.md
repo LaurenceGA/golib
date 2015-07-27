@@ -1,4 +1,4 @@
 # lib
-Golang libraries
+Programming libraries
 
-A repository for various golang utility libraries
+A repository for various utility libraries
